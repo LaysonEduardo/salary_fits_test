@@ -19,6 +19,9 @@ dependencies:
 #HTTP
   dio: ^5.1.1
 
+#Location
+  geolocator: ^9.0.2
+
 #State Management
   flutter_bloc: ^8.1.2
 
@@ -29,3 +32,20 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/vectors/climatic_icons/
+
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Bold.ttf
+          weight: 900
+
+        - asset: assets/fonts/OpenSans-Italic.ttf
+          style: italic
+
+        - asset: assets/fonts/OpenSans-Medium.ttf
+          weight: 700
+
+        - asset: assets/fonts/OpenSans-Regular.ttf
+          weight: 500

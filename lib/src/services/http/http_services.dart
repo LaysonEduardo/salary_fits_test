@@ -1,9 +1,7 @@
-import 'dart:io';
-
 abstract class HttpServices {
-  Future get() async {}
+  Future<dynamic> get(String url) async {}
 
-  Future post() async {}
+  Future<dynamic> post(String url) async {}
 
-  Future put() async {}
+  Future<dynamic> put(String url) async {}
 }

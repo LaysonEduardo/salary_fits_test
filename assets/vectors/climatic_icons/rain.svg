@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 5.79 5.94">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-4);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-.29" y1="-.2" x2="3.38" y2="2.97" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#437aff"/>
+      <stop offset="1" stop-color="#67a4fe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-2.25" y1="2.07" x2="1.41" y2="5.24" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-1.05" y1=".68" x2="2.61" y2="3.86" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="-2.03" y1="1.81" x2="1.63" y2="4.99" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="-.96" y1=".58" x2="2.7" y2="3.76" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-4" d="m4.9,1.94c.16-.8-.68-1.42-1.39-1.05-.16-.52-.63-.89-1.2-.89-.73,0-1.31.63-1.25,1.37-.6.05-1.07.55-1.07,1.15s.52,1.16,1.16,1.16h3.76c.48,0,.87-.39.87-.87s-.36-.87-.89-.87Z"/>
+      <path class="cls-1" d="m1.02,4.16c-.09-.04-.19,0-.23.1l-.31.78c-.04.09,0,.19.1.23.09.04.19,0,.23-.1l.31-.78c.04-.09,0-.19-.1-.23Z"/>
+      <path class="cls-3" d="m3.68,4.03c-.09-.04-.19,0-.23.1l-.31.78c-.04.09,0,.19.1.23.09.04.19,0,.23-.1l.31-.78c.04-.09,0-.19-.1-.23Z"/>
+      <path class="cls-5" d="m2.3,4.82c-.09-.04-.19,0-.23.1l-.31.78c-.04.09,0,.19.1.23.09.04.19,0,.23-.1l.31-.78c.04-.09,0-.19-.1-.23Z"/>
+      <path class="cls-2" d="m4.68,4.73c-.09-.04-.19,0-.23.1l-.31.78c-.04.09,0,.19.1.23.09.04.19,0,.23-.1l.31-.78c.04-.09,0-.19-.1-.23Z"/>
+    </g>
+  </g>
+</svg>
