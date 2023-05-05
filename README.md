@@ -1,16 +1,44 @@
 # salary_fits_test
 
-A new Flutter project.
 
-## Getting Started
+## Decisões de uso (Packages)
 
-This project is a starting point for a Flutter application.
+Com base na descrição do teste/task essas foram as decisões tomadas quanto aos packages
+    
+ - UI
+    - flutter_svg (Para uso dos icones/imagens vetoriais).
+   ---
 
-A few resources to get you started if this is your first Flutter project:
+ - Dependecy Injection/Navegation
+    - flutter_modular (Por conta de exp prévia)
+   ---
+ - State Management 
+    - flutter_bloc (Requisito obrigatório)
+   ---
+ - HTTP
+    - dio (Para demonstrar a implementação de services independentes).
+   ---
+ - Unit Tests   
+    - http_mock_adapter (Para mockar o adaptador HTTP e manipular os retornos).
+   --- 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Regra de negócio e afins
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [] Criar Models Post, Comment e User.
+- [] Criar Services para popular esses models.
+- [] Implementar e testar services com Dio.
+- [] Criar integração com Modular.
+
+### Tela Today
+
+- [] Criar os arquivos e classes referente ao Bloc.
+
+
+### Tela Next Days
+
+- [] Criar arquivos e classes referente ao Bloc.
+
+
+### Tela Settings
+
+- [] Criar arquivos e classes referente ao Bloc.
