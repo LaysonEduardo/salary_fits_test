@@ -2,8 +2,8 @@ abstract class TodayState {
   TodayState();
 }
 
-class TodayBlankState extends TodayState {
-  TodayBlankState() : super();
+class TodayLoadingState extends TodayState {
+  TodayLoadingState() : super();
 }
 
 class TodaySuccessState extends TodayState {
