@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:intl/intl.dart';
 import 'package:salary_fits_test/generated/l10n.dart';
 import 'package:salary_fits_test/src/common/app_colors.dart';
 import 'package:salary_fits_test/src/pages/commom_components/default_box.dart';
@@ -97,40 +98,57 @@ class _TodayPageState extends State<TodayPage> {
               horizontal: 10,
               vertical: 10,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
+            child: Column(
               children: [
-                Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.start,
-                  direction: Axis.vertical,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      '${state.location.state}, ${state.location.country}',
-                      style: const AppFonts.medium(
-                        20,
-                        color: AppColors.lightBlue,
-                      ),
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.start,
+                      direction: Axis.vertical,
+                      children: [
+                        Text(
+                          '${state.location.state}, ${state.location.country}',
+                          style: const AppFonts.medium(
+                            20,
+                            color: AppColors.lightBlue,
+                          ),
+                        ),
+                        Text(
+                          state.date,
+                          style: const AppFonts.regular(
+                            16,
+                            color: AppColors.lightBlue,
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      state.date,
-                      style: const AppFonts.regular(
-                        16,
+                    InkWell(
+                      onTap: () async {
+                        _bloc.add(UpdateToday());
+                      },
+                      child: const Icon(
+                        Icons.refresh_rounded,
+                        size: 28,
                         color: AppColors.lightBlue,
                       ),
                     )
                   ],
                 ),
-                InkWell(
-                  onTap: () async {
-                    _bloc.add(UpdateToday());
-                  },
-                  child: const Icon(
-                    Icons.refresh_rounded,
-                    size: 28,
-                    color: AppColors.lightBlue,
-                  ),
-                )
+                const Divider(thickness: 2),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Last update: ${state.lastUpdate}',
+                      style: const AppFonts.regular(
+                        14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

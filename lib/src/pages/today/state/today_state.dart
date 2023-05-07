@@ -16,12 +16,14 @@ class TodaySuccessState extends TodayState {
   OpenWeatherModel todayWeather;
   WeatherState state;
   String date;
+  String lastUpdate;
 
   TodaySuccessState({
     required this.location,
     required this.todayWeather,
     required this.date,
     required this.state,
+    required this.lastUpdate,
   }) : super();
 }
 

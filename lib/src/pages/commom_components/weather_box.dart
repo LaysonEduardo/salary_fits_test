@@ -21,7 +21,7 @@ class WeatherBox extends StatelessWidget {
             width: 100,
           ),
           const VerticalDivider(
-            thickness: 3,
+            thickness: 2,
           ),
           Wrap(
             direction: Axis.vertical,

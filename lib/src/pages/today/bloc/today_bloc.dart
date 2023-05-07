@@ -17,6 +17,7 @@ class TodayBloc extends Bloc<TodayEvents, TodayState> {
               todayWeather: weather.todayWeather!,
               date: DateFormat.yMMMMEEEEd().format(DateTime.now()),
               state: weather.state,
+              lastUpdate: DateFormat.Hm().format(DateTime.now()),
             ),
           );
         } else {
@@ -29,12 +30,15 @@ class TodayBloc extends Bloc<TodayEvents, TodayState> {
 
     on<UpdateToday>((event, emit) async {
       await weather.fetchToday().then((_) {
-        emit(TodaySuccessState(
-          location: weather.currentLocation!,
-          todayWeather: weather.todayWeather!,
-          date: DateFormat.yMMMMEEEEd().format(DateTime.now()),
-          state: weather.state,
-        ));
+        emit(
+          TodaySuccessState(
+            location: weather.currentLocation!,
+            todayWeather: weather.todayWeather!,
+            date: DateFormat.yMMMMEEEEd().format(DateTime.now()),
+            state: weather.state,
+            lastUpdate: DateFormat.Hm().format(DateTime.now()),
+          ),
+        );
       });
     });
   }
