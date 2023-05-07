@@ -1,0 +1,3 @@
+class LanguageServices {
+  LanguageServices();
+}

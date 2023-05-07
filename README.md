@@ -24,14 +24,14 @@ Com base na descrição do teste/task essas foram as decisões tomadas quanto ao
 
 ### Regra de negócio e afins
 
-- [] Criar Models Post, Comment e User.
-- [] Criar Services para popular esses models.
+- [] Criar Models necessários
+- [x] Integrar Services
 - [] Implementar e testar services com Dio.
-- [] Criar integração com Modular.
+- [x] Criar integração com Modular.
 
 ### Tela Today
 
-- [] Criar os arquivos e classes referente ao Bloc.
+- [x] Criar os arquivos e classes referente ao Bloc.
 
 
 ### Tela Next Days

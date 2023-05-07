@@ -1,1 +1,9 @@
-enum WeatherState { cloudy, partlyCloudy, rain, sunny, thundershower, unknown }
+enum WeatherState {
+  clearSky,
+  cloudy,
+  partlyCloudy,
+  rain,
+  thunderStorm,
+  snow,
+  unknown
+}

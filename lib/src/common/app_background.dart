@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:salary_fits_test/src/common/app_colors.dart';
-import '../services/weather/weather_state.dart';
 
-class DynamicBackground extends StatelessWidget {
-  const DynamicBackground({super.key, required this.child});
+class AppBackground extends StatelessWidget {
   final Widget child;
-  // final WeatherState weatherState = Modular.get<WeatherState>();
+  const AppBackground({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
