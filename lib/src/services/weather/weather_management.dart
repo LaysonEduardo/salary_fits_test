@@ -41,37 +41,21 @@ class WeatherManagement {
 
   void setWeatherState() {
     if (todayWeather != null) {
-      switch (todayWeather!.weather.first.description) {
-        case 'clear sky':
+      switch (todayWeather!.weather.first.main) {
+        case 'Clear':
           state = WeatherState.clearSky;
           break;
 
-        case 'few clouds':
-          state = WeatherState.partlyCloudy;
-          break;
-
-        case 'scattered clouds':
-          state = WeatherState.partlyCloudy;
-          break;
-
-        case 'broken clouds':
+        case 'Clouds':
           state = WeatherState.cloudy;
           break;
 
-        case 'shower rain':
+        case 'Rain	':
           state = WeatherState.rain;
           break;
 
-        case 'rain':
-          state = WeatherState.rain;
-          break;
-
-        case 'thunderstorm':
+        case 'Thunderstorm':
           state = WeatherState.thunderStorm;
-          break;
-
-        case 'snow':
-          state = WeatherState.snow;
           break;
 
         default:

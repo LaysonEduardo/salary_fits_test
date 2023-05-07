@@ -43,7 +43,11 @@ class LocationService {
       final result = await _http.get(Endpoints().geoCoding(positon: coords));
 
       if (result.statusCode == 200) {
-        return Location.fromJson(result.data[0]);
+        final location = Location.fromJson(result.data[0]);
+        location.latitude = coords.latitude;
+        location.longitude = coords.longitude;
+
+        return location;
       }
     }
 

@@ -1,6 +1,6 @@
 class Location {
-  final double latitude;
-  final double longitude;
+  double latitude;
+  double longitude;
   final String country;
   final String state;
 

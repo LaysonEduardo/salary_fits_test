@@ -6,8 +6,8 @@ import '../state/today_state.dart';
 
 class TodayBloc extends Bloc<TodayEvents, TodayState> {
   final WeatherManagement weather;
-  TodayBloc(this.weather) : super(TodayLoadingState()) {
-    on<FetchWeather>(
+  TodayBloc(this.weather) : super(TodayFirstLoadingState()) {
+    on<FetchToday>(
       (event, emit) async {
         await weather.init();
         if (weather.hasValidToday) {
@@ -26,5 +26,16 @@ class TodayBloc extends Bloc<TodayEvents, TodayState> {
         }
       },
     );
+
+    on<UpdateToday>((event, emit) async {
+      await weather.fetchToday().then((_) {
+        emit(TodaySuccessState(
+          location: weather.currentLocation!,
+          todayWeather: weather.todayWeather!,
+          date: DateFormat.yMMMMEEEEd().format(DateTime.now()),
+          state: weather.state,
+        ));
+      });
+    });
   }
 }

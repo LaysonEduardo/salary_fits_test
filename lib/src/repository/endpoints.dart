@@ -1,4 +1,5 @@
 import 'package:geolocator/geolocator.dart';
+import 'package:intl/intl.dart';
 
 import '../models/location/location.dart';
 
@@ -8,7 +9,7 @@ class Endpoints {
   final String appID = 'dbcadc34a5cf5d53decf099c7ad40195';
 
   String weatherToday({required Location location, required String metric}) {
-    return '/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}${appIdentity()}&units=$metric';
+    return '/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}${appIdentity()}&units=$metric&lang=${Intl.defaultLocale}';
   }
 
   String nextDays({required String lat, required String lon}) {

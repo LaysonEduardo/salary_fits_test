@@ -1,3 +1,5 @@
 abstract class TodayEvents {}
 
-class FetchWeather extends TodayEvents {}
+class FetchToday extends TodayEvents {}
+
+class UpdateToday extends TodayEvents {}
