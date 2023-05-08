@@ -7,6 +7,17 @@ Com base na descrição do teste/task essas foram as decisões tomadas quanto ao
     
  - UI
     - flutter_svg (Para uso dos icones/imagens vetoriais).
+    - Rive (facil controle de animações). 
+    - show_up_animation (facil controle de animações nos widgets)
+   ---
+
+ - Internationalization
+    - intl (manipular datas/horarios).
+    - intl_utils (gerar arquivos relacionado as traduções).
+   ---
+
+ - Localization
+    - geolocator (Buscar localização atual).
    ---
 
  - Dependecy Injection/Navegation
@@ -29,16 +40,17 @@ Com base na descrição do teste/task essas foram as decisões tomadas quanto ao
 - [] Implementar e testar services com Dio.
 - [x] Criar integração com Modular.
 
-### Tela Today
+### Today Infos
 
 - [x] Criar os arquivos e classes referente ao Bloc.
+- [] Implementar informações com base no repository/bloc.
 
 
-### Tela Next Days
+### Next Days Infos
 
 - [] Criar arquivos e classes referente ao Bloc.
-
+- [] Implementar informações com base no repository/bloc.
 
 ### Tela Settings
 
-- [] Criar arquivos e classes referente ao Bloc.
+- [] Implementar controle de métrica atual (Graus/Celsius)
