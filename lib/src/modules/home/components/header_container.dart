@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salary_fits_test/generated/l10n.dart';
-import 'package:salary_fits_test/src/pages/home/state/home_state.dart';
+import 'package:salary_fits_test/src/modules/home/state/home_state.dart';
 import '../../../common/app_colors.dart';
 import '../../../common/app_fonts.dart';
 

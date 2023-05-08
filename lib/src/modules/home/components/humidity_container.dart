@@ -4,7 +4,7 @@ import 'package:salary_fits_test/generated/l10n.dart';
 import 'package:salary_fits_test/src/common/app_colors.dart';
 import 'package:salary_fits_test/src/common/app_weather_icons.dart';
 import 'package:salary_fits_test/src/models/weather/open_weather_model.dart';
-import 'package:salary_fits_test/src/pages/commom_components/default_box.dart';
+import 'package:salary_fits_test/src/modules/commom_components/default_box.dart';
 import '../../../common/app_fonts.dart';
 import '../../../services/weather/weather_management.dart';
 

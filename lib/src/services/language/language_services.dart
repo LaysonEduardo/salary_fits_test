@@ -1,3 +1,0 @@
-class LanguageServices {
-  LanguageServices();
-}
