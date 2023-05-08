@@ -1,10 +1,8 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rive/rive.dart';
 import 'package:salary_fits_test/generated/l10n.dart';
-import 'package:salary_fits_test/src/common/app_colors.dart';
 import 'package:salary_fits_test/src/common/app_fonts.dart';
 import 'package:salary_fits_test/src/pages/commom_components/default_box.dart';
 import 'package:salary_fits_test/src/pages/commom_components/header_container.dart';
@@ -25,7 +23,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _bloc = Modular.get<HomeBloc>();
-  final _pageController = PageController();
   @override
   void initState() {
     _bloc.add(FetchToday());
@@ -134,15 +131,9 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             const SizedBox(height: 25),
-            WeatherContainer(
-              current: state.todayWeather,
-              weatherState: state.weatherState,
-            ),
+            WeatherContainer(),
             const SizedBox(height: 25),
-            HumidityContainer(
-              weatherModel: state.todayWeather,
-              weatherState: state.weatherState,
-            ),
+            HumidityContainer(),
           ],
         ),
       );

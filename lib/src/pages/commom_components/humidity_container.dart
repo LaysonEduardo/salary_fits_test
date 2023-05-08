@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:salary_fits_test/generated/l10n.dart';
 import 'package:salary_fits_test/src/common/app_colors.dart';
 import 'package:salary_fits_test/src/pages/commom_components/default_box.dart';
-import 'package:salary_fits_test/src/services/weather/weather_state.dart';
 import '../../common/app_fonts.dart';
-import '../../models/weather/open_weather_model.dart';
+import '../../services/weather/weather_management.dart';
 
 class HumidityContainer extends StatelessWidget {
-  final OpenWeatherModel weatherModel;
-  final WeatherState weatherState;
-  const HumidityContainer({
+  final WeatherManagement management = Modular.get<WeatherManagement>();
+
+  HumidityContainer({
     super.key,
-    required this.weatherModel,
-    required this.weatherState,
   });
 
   @override
@@ -25,7 +23,7 @@ class HumidityContainer extends StatelessWidget {
             I18n.of(context).infos,
             style: AppFonts.medium(
               20,
-              color: AppColors.accent(weatherState: weatherState),
+              color: AppColors.accent(weatherState: management.state),
             ),
           ),
           const Divider(thickness: 2),
@@ -36,7 +34,7 @@ class HumidityContainer extends StatelessWidget {
             children: [
               Row(
                 // direction: Axis.vertical,
-                children: [
+                children: const [
                   Flexible(child: DefaultBox(child: Text('test'))),
                   SizedBox(width: 10),
                   Flexible(child: DefaultBox(child: Text('test'))),
@@ -47,27 +45,5 @@ class HumidityContainer extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  String getWeatherIcon() {
-    switch (weatherState) {
-      case WeatherState.clearSky:
-        return 'assets/icons/clear_sky.png';
-
-      case WeatherState.cloudy:
-        return 'assets/icons/cloudy.png';
-
-      case WeatherState.rain:
-        return 'assets/icons/rain.png';
-
-      case WeatherState.thunderStorm:
-        return 'assets/icons/thunderStorm.png';
-
-      case WeatherState.snow:
-        return 'assets/icons/thunderStorm.png';
-
-      default:
-        return 'assets/icons/clear_sky.png';
-    }
   }
 }
