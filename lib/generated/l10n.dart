@@ -60,10 +60,10 @@ class I18n {
     );
   }
 
-  /// `Next Days`
+  /// `Next`
   String get nextDays {
     return Intl.message(
-      'Next Days',
+      'Next',
       name: 'nextDays',
       desc: '',
       args: [],
