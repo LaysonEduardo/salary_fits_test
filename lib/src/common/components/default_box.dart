@@ -21,15 +21,6 @@ class DefaultBox extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.8),
           borderRadius: BorderRadius.circular(10),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.white.withOpacity(0.5),
-          //     spreadRadius: 5,
-          //     blurRadius: 5,
-          //     blurStyle: BlurStyle.solid,
-          //     offset: const Offset(0, 0),
-          //   ),
-          // ],
         ),
         width: MediaQuery.of(context).size.width,
         child: child,

@@ -3,7 +3,7 @@ import 'package:salary_fits_test/src/modules/home/state/home_state.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 
 import '../../generated/l10n.dart';
-import '../modules/commom_components/default_box.dart';
+import 'components/default_box.dart';
 import '../modules/home/components/header_container.dart';
 import 'app_fonts.dart';
 
