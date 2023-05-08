@@ -5,9 +5,11 @@ import 'package:rive/rive.dart';
 import 'package:salary_fits_test/generated/l10n.dart';
 import 'package:salary_fits_test/src/common/app_fonts.dart';
 import 'package:salary_fits_test/src/pages/commom_components/default_box.dart';
-import 'package:salary_fits_test/src/pages/commom_components/header_container.dart';
-import 'package:salary_fits_test/src/pages/commom_components/humidity_container.dart';
-import 'package:salary_fits_test/src/pages/commom_components/weather_container.dart';
+import 'package:salary_fits_test/src/pages/home/components/dynamic_bottom.dart';
+import 'package:salary_fits_test/src/pages/home/components/header_container.dart';
+import 'package:salary_fits_test/src/pages/home/components/humidity_container.dart';
+import 'package:salary_fits_test/src/pages/commom_components/keep_alive_container.dart';
+import 'package:salary_fits_test/src/pages/home/components/weather_container.dart';
 import 'package:salary_fits_test/src/pages/home/bloc/home_bloc.dart';
 import 'package:salary_fits_test/src/pages/home/state/home_state.dart';
 import 'package:show_up_animation/show_up_animation.dart';
@@ -41,45 +43,60 @@ class _HomePageState extends State<HomePage> {
               extendBodyBehindAppBar: true,
               appBar: state is HomeSuccessState
                   ? PreferredSize(
-                      preferredSize: const Size.fromHeight(120),
+                      preferredSize: const Size.fromHeight(160),
                       child: SafeArea(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                          ),
-                          child: ShowUpAnimation(
-                            child: TabBar(
-                              indicatorColor: Colors.white,
-                              indicatorSize: TabBarIndicatorSize.label,
-                              tabs: [
-                                Tab(
-                                  height: 30,
-                                  child: Text(
-                                    I18n.of(context).today,
-                                    style: const AppFonts.medium(
-                                      16,
-                                      color: Colors.white,
+                        child: ShowUpAnimation(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              DefaultBox(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: 15,
+                                ),
+                                child: HeaderContainer(
+                                  values: state,
+                                  onUpdate: () {
+                                    _bloc.add(
+                                      UpdateToday(),
+                                    );
+                                  },
+                                ),
+                              ),
+                              TabBar(
+                                indicatorColor: Colors.white,
+                                indicatorSize: TabBarIndicatorSize.label,
+                                tabs: [
+                                  Tab(
+                                    height: 30,
+                                    child: Text(
+                                      I18n.of(context).today,
+                                      style: const AppFonts.medium(
+                                        16,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Tab(
-                                  height: 30,
-                                  child: Text(
-                                    I18n.of(context).nextDays,
-                                    style: const AppFonts.medium(16,
-                                        color: Colors.white),
+                                  Tab(
+                                    height: 30,
+                                    child: Text(
+                                      I18n.of(context).nextDays,
+                                      style: const AppFonts.medium(16,
+                                          color: Colors.white),
+                                    ),
                                   ),
-                                ),
-                                Tab(
-                                  height: 30,
-                                  child: Text(
-                                    I18n.of(context).settings,
-                                    style: const AppFonts.medium(16,
-                                        color: Colors.white),
+                                  Tab(
+                                    height: 30,
+                                    child: Text(
+                                      I18n.of(context).settings,
+                                      style: const AppFonts.medium(16,
+                                          color: Colors.white),
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                       ))
@@ -111,30 +128,30 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     } else if (state is HomeSuccessState) {
-      return DefaultBox(
-        margin: const EdgeInsets.symmetric(
-          horizontal: 15,
-          // vertical: 20,
-        ),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 10,
-        ),
-        child: Column(
-          children: [
-            HeaderContainer(
-              values: state,
-              onUpdate: () {
-                _bloc.add(
-                  UpdateToday(),
-                );
-              },
-            ),
-            const SizedBox(height: 25),
-            WeatherContainer(),
-            const SizedBox(height: 25),
-            HumidityContainer(),
-          ],
+      return KeepAliveContainer(
+        child: DefaultBox(
+          margin: const EdgeInsets.symmetric(
+            horizontal: 15,
+          ),
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 25),
+                    WeatherContainer(),
+                    const SizedBox(height: 25),
+                    GeneralInfosContainer(),
+                  ],
+                ),
+              ),
+              DynamicBottom(),
+            ],
+          ),
         ),
       );
     } else {

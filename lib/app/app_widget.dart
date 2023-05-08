@@ -18,6 +18,7 @@ class WeatherApp extends StatefulWidget {
 class _WeatherAppState extends State<WeatherApp> {
   final HttpServices http = Modular.get<DioServices>();
   late String language = Platform.localeName.split('_')[0];
+
   @override
   void initState() {
     http.init();

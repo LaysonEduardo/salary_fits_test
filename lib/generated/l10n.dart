@@ -90,6 +90,16 @@ class I18n {
     );
   }
 
+  /// `Wind`
+  String get wind {
+    return Intl.message(
+      'Wind',
+      name: 'wind',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Weather`
   String get weather {
     return Intl.message(
@@ -107,6 +117,16 @@ class I18n {
       name: 'infos',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Last update: {date}`
+  String lastUpdate(Object date) {
+    return Intl.message(
+      'Last update: $date',
+      name: 'lastUpdate',
+      desc: '',
+      args: [date],
     );
   }
 }

@@ -50,8 +50,16 @@ class WeatherManagement {
           state = WeatherState.cloudy;
           break;
 
-        case 'Rain	':
+        case 'Drizzle':
+          state = WeatherState.drizzle;
+          break;
+
+        case 'Rain':
           state = WeatherState.rain;
+          break;
+
+        case 'Snow':
+          state = WeatherState.snow;
           break;
 
         case 'Thunderstorm':

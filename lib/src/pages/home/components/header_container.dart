@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:salary_fits_test/generated/l10n.dart';
 import 'package:salary_fits_test/src/pages/home/state/home_state.dart';
-import '../../common/app_colors.dart';
-import '../../common/app_fonts.dart';
+import '../../../common/app_colors.dart';
+import '../../../common/app_fonts.dart';
 
 class HeaderContainer extends StatelessWidget {
   final HomeSuccessState values;
@@ -15,29 +16,23 @@ class HeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Wrap(
-              crossAxisAlignment: WrapCrossAlignment.start,
-              direction: Axis.vertical,
-              children: [
-                Text(
-                  '${values.location.state}, ${values.location.country}',
-                  style: AppFonts.medium(
-                    20,
-                    color: AppColors.accent(weatherState: values.weatherState),
-                  ),
+            Flexible(
+              child: Text(
+                '${values.location.state}, ${values.location.country}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+                style: AppFonts.medium(
+                  20,
+                  color: AppColors.accent(weatherState: values.weatherState),
                 ),
-                Text(
-                  values.date,
-                  style: AppFonts.regular(
-                    16,
-                    color: AppColors.accent(weatherState: values.weatherState),
-                  ),
-                ),
-              ],
+              ),
             ),
             InkWell(
               onTap: onUpdate,
@@ -49,15 +44,24 @@ class HeaderContainer extends StatelessWidget {
             ),
           ],
         ),
-        const Divider(thickness: 2),
+        Text(
+          values.date,
+          style: AppFonts.regular(
+            16,
+            color: AppColors.accent(weatherState: values.weatherState),
+          ),
+        ),
+        Divider(
+          color: Colors.grey[600],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Last update: ${values.lastUpdate}',
-              style: const AppFonts.regular(
+              I18n.of(context).lastUpdate(values.lastUpdate),
+              style: AppFonts.regular(
                 14,
-                color: Colors.grey,
+                color: Colors.grey[600],
               ),
             ),
           ],

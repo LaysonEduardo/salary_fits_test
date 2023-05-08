@@ -11,7 +11,6 @@ dependencies:
     sdk: flutter
 
 #UI
-  flutter_svg: ^2.0.5
   rive: ^0.10.4
   show_up_animation: ^2.0.0
   
@@ -41,8 +40,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/icons/
     - assets/animations/
+    - assets/background_objects/
+    - assets/icons/
 
   fonts:
     - family: OpenSans
@@ -58,6 +58,7 @@ flutter:
 
         - asset: assets/fonts/OpenSans-Regular.ttf
           weight: 500
+
 flutter_intl:
   enabled: true
   class_name: I18n

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:salary_fits_test/src/common/app_weather_icons.dart';
 import 'package:salary_fits_test/src/services/weather/weather_management.dart';
-import '../../common/app_colors.dart';
-import '../../common/app_fonts.dart';
+import '../../../common/app_colors.dart';
+import '../../../common/app_fonts.dart';
 
 class WeatherContainer extends StatelessWidget {
   final WeatherManagement management = Modular.get<WeatherManagement>();

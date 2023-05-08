@@ -4,6 +4,8 @@
     "nextDays": "Próximos",
     "settings": "Configurações", 
     "humidity": "Humidade",
+    "wind": "Vento",
     "weather": "Clima",
-    "infos": "Informações"
+    "infos": "Informações",
+    "lastUpdate": "Ultima atualização: {date}"
 }

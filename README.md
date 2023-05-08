@@ -6,7 +6,6 @@
 Com base na descrição do teste/task essas foram as decisões tomadas quanto aos packages
     
  - UI
-    - flutter_svg (Para uso dos icones/imagens vetoriais).
     - Rive (facil controle de animações). 
     - show_up_animation (facil controle de animações nos widgets)
    ---

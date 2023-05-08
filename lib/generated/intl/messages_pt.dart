@@ -20,13 +20,17 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt';
 
+  static String m0(date) => "Ultima atualização: ${date}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "humidity": MessageLookupByLibrary.simpleMessage("Humidade"),
         "infos": MessageLookupByLibrary.simpleMessage("Informações"),
+        "lastUpdate": m0,
         "nextDays": MessageLookupByLibrary.simpleMessage("Próximos"),
         "settings": MessageLookupByLibrary.simpleMessage("Configurações"),
         "today": MessageLookupByLibrary.simpleMessage("Hoje"),
-        "weather": MessageLookupByLibrary.simpleMessage("Clima")
+        "weather": MessageLookupByLibrary.simpleMessage("Clima"),
+        "wind": MessageLookupByLibrary.simpleMessage("Vento")
       };
 }
