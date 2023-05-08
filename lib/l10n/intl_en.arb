@@ -2,5 +2,8 @@
     "@@locale": "en",
     "today": "Today",
     "nextDays": "Next Days",
-    "settings": "Settings"
+    "settings": "Settings", 
+    "humidity": "Humidity",
+    "weather": "Weather",
+    "infos": "Informations"
 }

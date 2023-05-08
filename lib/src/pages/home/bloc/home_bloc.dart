@@ -1,28 +1,28 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:salary_fits_test/src/services/weather/weather_management.dart';
-import '../events/today_events.dart';
-import '../state/today_state.dart';
+import '../events/home_events.dart';
+import '../state/home_state.dart';
 
-class TodayBloc extends Bloc<TodayEvents, TodayState> {
+class HomeBloc extends Bloc<HomeEvents, HomeState> {
   final WeatherManagement weather;
-  TodayBloc(this.weather) : super(TodayFirstLoadingState()) {
+  HomeBloc(this.weather) : super(HomeFirstLoadingState()) {
     on<FetchToday>(
       (event, emit) async {
         await weather.init();
         if (weather.hasValidToday) {
           emit(
-            TodaySuccessState(
+            HomeSuccessState(
               location: weather.currentLocation!,
               todayWeather: weather.todayWeather!,
               date: DateFormat.yMMMMEEEEd().format(DateTime.now()),
-              state: weather.state,
+              weatherState: weather.state,
               lastUpdate: DateFormat.Hm().format(DateTime.now()),
             ),
           );
         } else {
           emit(
-            TodayFailState(),
+            HomeFailState(),
           );
         }
       },
@@ -31,11 +31,11 @@ class TodayBloc extends Bloc<TodayEvents, TodayState> {
     on<UpdateToday>((event, emit) async {
       await weather.fetchToday().then((_) {
         emit(
-          TodaySuccessState(
+          HomeSuccessState(
             location: weather.currentLocation!,
             todayWeather: weather.todayWeather!,
             date: DateFormat.yMMMMEEEEd().format(DateTime.now()),
-            state: weather.state,
+            weatherState: weather.state,
             lastUpdate: DateFormat.Hm().format(DateTime.now()),
           ),
         );

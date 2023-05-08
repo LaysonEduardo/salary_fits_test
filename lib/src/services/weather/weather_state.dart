@@ -1,7 +1,7 @@
 enum WeatherState {
   clearSky,
   cloudy,
-  partlyCloudy,
+  drizzle,
   rain,
   thunderStorm,
   snow,

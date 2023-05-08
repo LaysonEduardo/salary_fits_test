@@ -12,6 +12,7 @@ dependencies:
 
 #UI
   flutter_svg: ^2.0.5
+  rive: ^0.10.4
   show_up_animation: ^2.0.0
 #Dependecy injection / Navigation
   flutter_modular: ^5.0.3
@@ -40,6 +41,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
+    - assets/animations/
 
   fonts:
     - family: OpenSans

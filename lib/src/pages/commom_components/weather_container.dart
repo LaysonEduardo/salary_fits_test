@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:salary_fits_test/src/services/weather/weather_state.dart';
-
 import '../../common/app_colors.dart';
 import '../../common/app_fonts.dart';
 import '../../models/weather/open_weather_model.dart';
 
-class WeatherBox extends StatelessWidget {
+class WeatherContainer extends StatelessWidget {
   final OpenWeatherModel current;
-  final WeatherState state;
-  const WeatherBox({super.key, required this.current, required this.state});
+  final WeatherState weatherState;
+  const WeatherContainer({
+    super.key,
+    required this.current,
+    required this.weatherState,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +21,12 @@ class WeatherBox extends StatelessWidget {
         children: [
           Image.asset(
             getWeatherIcon(),
-            width: 100,
+            width: 150,
           ),
-          const VerticalDivider(
-            thickness: 2,
-          ),
-          Wrap(
-            direction: Axis.vertical,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            // alignment: WrapAlignment.center,
+            // direction: Axis.vertical,
             children: [
               Text(
                 current.weather.first.description,
@@ -34,12 +36,12 @@ class WeatherBox extends StatelessWidget {
                 ),
               ),
               Text(
-                '${current.main.feelsLike} °c',
-                style: const AppFonts.bold(
-                  30,
-                  color: AppColors.lightBlue,
+                '${current.main.feelsLike.round()} °C',
+                style: AppFonts.medium(
+                  40,
+                  color: AppColors.accent(weatherState: weatherState),
                 ),
-              )
+              ),
             ],
           ),
         ],
@@ -48,15 +50,12 @@ class WeatherBox extends StatelessWidget {
   }
 
   String getWeatherIcon() {
-    switch (state) {
+    switch (weatherState) {
       case WeatherState.clearSky:
         return 'assets/icons/clear_sky.png';
 
       case WeatherState.cloudy:
         return 'assets/icons/cloudy.png';
-
-      case WeatherState.partlyCloudy:
-        return 'assets/icons/partly_cloud.png';
 
       case WeatherState.rain:
         return 'assets/icons/rain.png';

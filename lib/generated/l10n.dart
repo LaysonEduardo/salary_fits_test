@@ -79,6 +79,36 @@ class I18n {
       args: [],
     );
   }
+
+  /// `Humidity`
+  String get humidity {
+    return Intl.message(
+      'Humidity',
+      name: 'humidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weather`
+  String get weather {
+    return Intl.message(
+      'Weather',
+      name: 'weather',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Informations`
+  String get infos {
+    return Intl.message(
+      'Informations',
+      name: 'infos',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I18n> {
