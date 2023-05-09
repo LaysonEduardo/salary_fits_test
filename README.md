@@ -36,7 +36,7 @@ Com base na descrição do teste/task essas foram as decisões tomadas quanto ao
 
 - [x] Criar Models necessários.
 - [x] Integrar Services.
-- [] Implementar e testar services com Dio.
+- [x] Implementar e testar services com Dio.
 - [x] Criar integração com Modular.
 
 ### Today Container
@@ -48,10 +48,10 @@ Com base na descrição do teste/task essas foram as decisões tomadas quanto ao
 ### Next 5 Days Container
 
 - [x] Criar arquivos e classes referente ao Bloc.
-- [] Implementar informações com base no repository/bloc.
+- [x] Implementar informações com base no repository/bloc.
 
 ### Settings dialog
 
-- [] Implementar controle de métrica atual (Graus/Celsius).
+- [x] Implementar controle de métrica atual (Graus/Celsius).
 - [x] Implementar métodos e bloc referente ao gerenciamento do idioma.
-- [] Popular métodos no diálogo de configurações
+- [x] Popular métodos no diálogo de configurações
