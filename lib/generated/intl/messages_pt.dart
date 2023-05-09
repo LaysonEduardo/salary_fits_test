@@ -24,18 +24,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "UnknownExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Erro desconhecido, tente novamente mais tarde."),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "english": MessageLookupByLibrary.simpleMessage("Inglês"),
+        "httpExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Verifique seu acesso a internet e tente novamente."),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidade"),
         "infos": MessageLookupByLibrary.simpleMessage("Informações"),
         "language": MessageLookupByLibrary.simpleMessage("Idioma:"),
         "lastUpdate": m0,
+        "locationExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Verifique a permissão de localização e tente novamente."),
         "measureUnit":
             MessageLookupByLibrary.simpleMessage("Unidade de medida:"),
         "nextDays": MessageLookupByLibrary.simpleMessage("Próximos dias"),
         "portuguese": MessageLookupByLibrary.simpleMessage("Portugues"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
         "settings": MessageLookupByLibrary.simpleMessage("Configurações"),
+        "somenthingWrong":
+            MessageLookupByLibrary.simpleMessage("Algo ocorreu mal"),
         "today": MessageLookupByLibrary.simpleMessage("Hoje"),
         "weather": MessageLookupByLibrary.simpleMessage("Clima"),
         "wind": MessageLookupByLibrary.simpleMessage("Vento")

@@ -1,3 +1,4 @@
+import 'package:salary_fits_test/src/common/app_exception.dart';
 import 'package:salary_fits_test/src/services/weather/weather_state.dart';
 
 import '../../../models/location/location.dart';
@@ -7,8 +8,8 @@ abstract class HomeState {
   HomeState();
 }
 
-class HomeFirstLoadingState extends HomeState {
-  HomeFirstLoadingState() : super();
+class HomeLoadingState extends HomeState {
+  HomeLoadingState() : super();
 }
 
 class HomeSuccessState extends HomeState {
@@ -28,5 +29,6 @@ class HomeSuccessState extends HomeState {
 }
 
 class HomeFailState extends HomeState {
-  HomeFailState() : super();
+  AppException exception;
+  HomeFailState({required this.exception}) : super();
 }

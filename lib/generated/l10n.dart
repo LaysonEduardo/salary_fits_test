@@ -189,6 +189,46 @@ class I18n {
       args: [],
     );
   }
+
+  /// `something went wrong`
+  String get somenthingWrong {
+    return Intl.message(
+      'something went wrong',
+      name: 'somenthingWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet access and try again.`
+  String get httpExceptionMessage {
+    return Intl.message(
+      'Please check your internet access and try again.',
+      name: 'httpExceptionMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check location permission and try again.`
+  String get locationExceptionMessage {
+    return Intl.message(
+      'Check location permission and try again.',
+      name: 'locationExceptionMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown error, please try again later.`
+  String get UnknownExceptionMessage {
+    return Intl.message(
+      'Unknown error, please try again later.',
+      name: 'UnknownExceptionMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I18n> {

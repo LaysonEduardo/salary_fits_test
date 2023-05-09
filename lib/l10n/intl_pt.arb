@@ -13,5 +13,9 @@
     "language": "Idioma:",
     "save": "Salvar", 
     "cancel": "Cancelar", 
-    "measureUnit": "Unidade de medida:"
+    "measureUnit": "Unidade de medida:", 
+    "somenthingWrong": "Algo ocorreu mal", 
+    "httpExceptionMessage": "Verifique seu acesso a internet e tente novamente.", 
+    "locationExceptionMessage": "Verifique a permissão de localização e tente novamente.", 
+    "UnknownExceptionMessage": "Erro desconhecido, tente novamente mais tarde."
 }
