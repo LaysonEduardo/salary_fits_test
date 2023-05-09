@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:salary_fits_test/src/repository/endpoints.dart';
+import '../../common/app_exception.dart';
 import 'base/http_services.dart';
 
 class DioServices implements HttpServices {
@@ -21,7 +22,7 @@ class DioServices implements HttpServices {
     if (response.statusCode == 200) {
       return response;
     }
-    throw Exception();
+    throw HTTPException();
   }
 
   @override
@@ -32,7 +33,7 @@ class DioServices implements HttpServices {
     if (response.statusCode == 200) {
       return response;
     }
-    throw Exception();
+    throw HTTPException();
   }
 
   @override
@@ -41,6 +42,6 @@ class DioServices implements HttpServices {
     if (response.statusCode == 200) {
       return response;
     }
-    throw Exception();
+    throw HTTPException();
   }
 }

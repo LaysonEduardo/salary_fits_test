@@ -11,7 +11,6 @@ import 'package:salary_fits_test/src/modules/language/state/app_language_event.d
 import '../src/modules/language/bloc/app_language_bloc.dart';
 import '../src/modules/language/events/app_language_state.dart';
 import '../src/services/http/base/http_services.dart';
-import '../src/services/http/dio_services.dart';
 
 class WeatherApp extends StatefulWidget {
   const WeatherApp({super.key});
@@ -21,7 +20,7 @@ class WeatherApp extends StatefulWidget {
 }
 
 class _WeatherAppState extends State<WeatherApp> {
-  final HttpServices http = Modular.get<DioServices>();
+  final HttpServices http = Modular.get<HttpServices>();
   @override
   void initState() {
     http.init();
