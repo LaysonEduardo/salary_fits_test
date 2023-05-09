@@ -1,7 +1,7 @@
 {
     "@@locale": "en",
     "today": "Today",
-    "nextDays": "Next",
+    "nextDays": "Next days",
     "settings": "Settings", 
     "humidity": "Humidity",
     "wind": "Wind",

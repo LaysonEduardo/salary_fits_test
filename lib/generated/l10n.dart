@@ -60,10 +60,10 @@ class I18n {
     );
   }
 
-  /// `Next`
+  /// `Next days`
   String get nextDays {
     return Intl.message(
-      'Next',
+      'Next days',
       name: 'nextDays',
       desc: '',
       args: [],
@@ -180,10 +180,10 @@ class I18n {
     );
   }
 
-  /// `Measure Unit`
+  /// `Measure Unit:`
   String get measureUnit {
     return Intl.message(
-      'Measure Unit',
+      'Measure Unit:',
       name: 'measureUnit',
       desc: '',
       args: [],

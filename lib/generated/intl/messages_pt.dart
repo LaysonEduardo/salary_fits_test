@@ -31,8 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Idioma:"),
         "lastUpdate": m0,
         "measureUnit":
-            MessageLookupByLibrary.simpleMessage("Unidade de medida"),
-        "nextDays": MessageLookupByLibrary.simpleMessage("Próximos"),
+            MessageLookupByLibrary.simpleMessage("Unidade de medida:"),
+        "nextDays": MessageLookupByLibrary.simpleMessage("Próximos dias"),
         "portuguese": MessageLookupByLibrary.simpleMessage("Portugues"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
         "settings": MessageLookupByLibrary.simpleMessage("Configurações"),

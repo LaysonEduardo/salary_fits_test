@@ -25,7 +25,7 @@ class WeatherContainer extends StatelessWidget {
               Text(
                 management.todayWeather!.weather.first.description,
                 style: const AppFonts.regular(
-                  20,
+                  18,
                   color: Colors.grey,
                 ),
               ),

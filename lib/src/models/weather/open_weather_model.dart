@@ -2,10 +2,12 @@ class OpenWeatherModel {
   List<Weather> weather;
   Main main;
   Wind wind;
+  int dt;
   OpenWeatherModel({
     required this.weather,
     required this.main,
     required this.wind,
+    required this.dt,
   });
 
   factory OpenWeatherModel.fromJson(Map<String, dynamic> json) {
@@ -15,6 +17,7 @@ class OpenWeatherModel {
           .toList(),
       main: Main.fromJson(json['main']),
       wind: Wind.fromJson(json['wind']),
+      dt: json["dt"] ?? '',
     );
   }
 }
