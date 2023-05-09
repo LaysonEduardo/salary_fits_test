@@ -1,13 +1,10 @@
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:salary_fits_test/src/common/app_exception.dart';
-import 'package:salary_fits_test/src/repository/endpoints.dart';
-import 'package:salary_fits_test/src/services/http/base/http_services.dart';
+import 'package:salary_fits_test/src/repository/geocode_repository.dart';
 
 import '../../models/location/location.dart';
 
 class LocationService {
-  static final HttpServices _http = Modular.get<HttpServices>();
   LocationService._();
 
   static Future<Position?> _getCoords() async {
@@ -40,17 +37,10 @@ class LocationService {
   static Future<Location> getCurrentLocation() async {
     final coords = await _getCoords();
     if (coords != null) {
-      final result = await _http.get(Endpoints().geoCoding(positon: coords));
-
-      if (result.statusCode == 200) {
-        final location = Location.fromJson(result.data[0]);
-        location.latitude = coords.latitude;
-        location.longitude = coords.longitude;
-
-        return location;
-      }
+      final location = await GeoCodeRepository.fetchLocation(coords);
+      return location;
     }
 
-    throw Exception();
+    throw LocationException();
   }
 }

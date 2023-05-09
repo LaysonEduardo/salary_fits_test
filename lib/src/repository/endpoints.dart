@@ -5,22 +5,24 @@ import '../models/location/location.dart';
 import '../modules/language/language.dart';
 
 class Endpoints {
-  final String baseURL = 'https://api.openweathermap.org';
-  final String appID = 'dbcadc34a5cf5d53decf099c7ad40195';
+  Endpoints._();
+  static const String baseURL = 'https://api.openweathermap.org';
+  static const String _appID = 'dbcadc34a5cf5d53decf099c7ad40195';
 
-  String weatherToday({required Location location, required String metric}) {
+  static String weatherToday(
+      {required Location location, required String metric}) {
     return '/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}${appIdentity()}&units=$metric&lang=${appLanguageBloc.state.selectedLanguage?.value ?? deviceLanguage().value}';
   }
 
-  String nextDays({required Location location, required String metric}) {
+  static String nextDays({required Location location, required String metric}) {
     return '/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&units=$metric${appIdentity()}&lang=${appLanguageBloc.state.selectedLanguage?.value ?? deviceLanguage().value}';
   }
 
-  String geoCoding({required Position positon}) {
+  static String geoCoding({required Position positon}) {
     return '/geo/1.0/reverse?lat=${positon.latitude}&lon=${positon.longitude}&limit=1${appIdentity()}';
   }
 
-  String appIdentity() {
-    return '&appid=$appID';
+  static String appIdentity() {
+    return '&appid=$_appID';
   }
 }

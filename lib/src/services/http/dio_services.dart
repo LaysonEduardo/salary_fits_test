@@ -5,12 +5,11 @@ import 'base/http_services.dart';
 
 class DioServices implements HttpServices {
   final Dio _dio;
-  final Endpoints endpoints = Endpoints();
   DioServices(this._dio);
 
   @override
   Future init() async {
-    _dio.options = BaseOptions(baseUrl: endpoints.baseURL);
+    _dio.options = BaseOptions(baseUrl: Endpoints.baseURL);
     debugPrint("DioServices started!");
   }
 

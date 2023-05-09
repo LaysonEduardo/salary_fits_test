@@ -34,7 +34,7 @@ class HomeBloc extends Bloc<HomeEvents, HomeState> {
     on<UpdateToday>((event, emit) async {
       emit(HomeFirstLoadingState());
       await weather.init();
-      await weather.fetchToday().then((_) {
+      if (weather.hasValidToday) {
         emit(
           HomeSuccessState(
             location: weather.currentLocation!,
@@ -44,7 +44,11 @@ class HomeBloc extends Bloc<HomeEvents, HomeState> {
             lastUpdate: DateFormat.Hm().format(DateTime.now()),
           ),
         );
-      });
+      } else {
+        emit(
+          HomeFailState(),
+        );
+      }
     });
   }
 }
