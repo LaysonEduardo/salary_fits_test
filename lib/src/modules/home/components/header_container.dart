@@ -141,9 +141,11 @@ class HeaderContainer extends StatelessWidget {
                 children: [
                   Text(
                     I18n.of(context).settings,
-                    style: const AppFonts.medium(
+                    style: AppFonts.medium(
                       20,
-                      color: AppColors.lightBlue,
+                      color: AppColors.accent(
+                        weatherState: homeBloc.weather.state,
+                      ),
                     ),
                   ),
                   const Divider(),
@@ -153,9 +155,11 @@ class HeaderContainer extends StatelessWidget {
                       FittedBox(
                         child: Text(
                           I18n.of(context).measureUnit,
-                          style: const AppFonts.medium(
+                          style: AppFonts.medium(
                             16,
-                            color: AppColors.lightBlue,
+                            color: AppColors.accent(
+                              weatherState: homeBloc.weather.state,
+                            ),
                           ),
                         ),
                       ),
@@ -169,8 +173,12 @@ class HeaderContainer extends StatelessWidget {
                             const BorderRadius.all(Radius.circular(10)),
                         selectedBorderColor: Colors.transparent,
                         selectedColor: Colors.white,
-                        fillColor: AppColors.lightBlue,
-                        color: AppColors.lightBlue,
+                        fillColor: AppColors.accent(
+                          weatherState: homeBloc.weather.state,
+                        ),
+                        color: AppColors.accent(
+                          weatherState: homeBloc.weather.state,
+                        ),
                         textStyle: const AppFonts.regular(
                           14,
                         ),
@@ -190,9 +198,11 @@ class HeaderContainer extends StatelessWidget {
                       FittedBox(
                         child: Text(
                           I18n.of(context).language,
-                          style: const AppFonts.medium(
+                          style: AppFonts.medium(
                             16,
-                            color: AppColors.lightBlue,
+                            color: AppColors.accent(
+                              weatherState: homeBloc.weather.state,
+                            ),
                           ),
                         ),
                       ),
@@ -208,8 +218,12 @@ class HeaderContainer extends StatelessWidget {
                             const BorderRadius.all(Radius.circular(10)),
                         selectedBorderColor: Colors.transparent,
                         selectedColor: Colors.white,
-                        fillColor: AppColors.lightBlue,
-                        color: AppColors.lightBlue,
+                        fillColor: AppColors.accent(
+                          weatherState: homeBloc.weather.state,
+                        ),
+                        color: AppColors.accent(
+                          weatherState: homeBloc.weather.state,
+                        ),
                         textStyle: const AppFonts.regular(
                           14,
                         ),
@@ -236,7 +250,9 @@ class HeaderContainer extends StatelessWidget {
                       );
                       onUpdate?.call();
                     },
-                    color: AppColors.lightBlue,
+                    color: AppColors.accent(
+                      weatherState: homeBloc.weather.state,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
