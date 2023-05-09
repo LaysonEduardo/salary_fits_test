@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import '../common/app_exception.dart';
 import '../models/location/location.dart';
 import '../models/weather/open_weather_model.dart';
 import '../services/http/base/http_services.dart';
