@@ -16,7 +16,7 @@ Com base na descrição do teste/task essas foram as decisões tomadas quanto ao
    ---
 
  - Localization
-    - geolocator (Buscar localização atual).
+    - geolocator (Buscar coordenadas atual).
    ---
 
  - Dependecy Injection/Navegation
@@ -34,22 +34,24 @@ Com base na descrição do teste/task essas foram as decisões tomadas quanto ao
 
 ### Regra de negócio e afins
 
-- [] Criar Models necessários
-- [x] Integrar Services
+- [x] Criar Models necessários.
+- [x] Integrar Services.
 - [] Implementar e testar services com Dio.
 - [x] Criar integração com Modular.
 
-### Today Infos
+### Today Container
 
 - [x] Criar os arquivos e classes referente ao Bloc.
+- [x] Implementar informações com base no repository/bloc.
+
+
+### Next 5 Days Container
+
+- [x] Criar arquivos e classes referente ao Bloc.
 - [] Implementar informações com base no repository/bloc.
 
+### Settings dialog
 
-### Next Days Infos
-
-- [] Criar arquivos e classes referente ao Bloc.
-- [] Implementar informações com base no repository/bloc.
-
-### Tela Settings
-
-- [] Implementar controle de métrica atual (Graus/Celsius)
+- [] Implementar controle de métrica atual (Graus/Celsius).
+- [x] Implementar métodos e bloc referente ao gerenciamento do idioma.
+- [] Popular métodos no diálogo de configurações

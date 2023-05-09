@@ -11,11 +11,11 @@ class WeatherManagement {
   WeatherState state;
   Location? currentLocation;
   OpenWeatherModel? todayWeather;
-  List<OpenWeatherModel> nextDays = [];
+  List<OpenWeatherModel> nextDaysWeather = [];
 
   bool useCelsius = true;
 
-  String get metric => useCelsius ? 'metric' : 'imperial';
+  String get _unit => useCelsius ? 'metric' : 'imperial';
 
   final HttpServices http = Modular.get<HttpServices>();
   final Endpoints endpoints = Endpoints();
@@ -27,15 +27,34 @@ class WeatherManagement {
   Future<void> init() async {
     currentLocation = await LocationService.getCurrentLocation();
     await fetchToday();
+    await fechNextDays();
     setWeatherState();
   }
 
   Future<void> fetchToday() async {
     if (currentLocation != null) {
       final Response result = await http.get(
-        endpoints.weatherToday(location: currentLocation!, metric: metric),
+        endpoints.weatherToday(location: currentLocation!, metric: _unit),
       );
       todayWeather = OpenWeatherModel.fromJson(result.data);
+    }
+  }
+
+  bool get hasValidToday => (currentLocation != null && todayWeather != null);
+
+  bool get hasValidNextDays => nextDaysWeather.isNotEmpty;
+
+  Future<void> fechNextDays() async {
+    if (currentLocation != null) {
+      final Response result = await http.get(
+        endpoints.nextDays(location: currentLocation!, metric: _unit),
+      );
+      if (result.statusCode == 200) {
+        nextDaysWeather.clear();
+        for (final json in result.data['list']) {
+          nextDaysWeather.add(OpenWeatherModel.fromJson(json));
+        }
+      }
     }
   }
 
@@ -71,21 +90,4 @@ class WeatherManagement {
       }
     }
   }
-
-  Future<void> fetchLocation() async {
-    if (currentLocation != null) {
-      final Response result = await http.get(
-        endpoints.weatherToday(location: currentLocation!, metric: metric),
-      );
-      todayWeather = OpenWeatherModel.fromJson(result.data);
-    }
-  }
-
-  bool get hasValidToday => (currentLocation != null && todayWeather != null);
-
-  bool get hasValidNextDays => nextDays.isNotEmpty;
-
-  Future<void> updateNextDays() async {}
-
-  Future<void> fechNextDays() async {}
 }

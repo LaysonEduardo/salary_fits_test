@@ -7,5 +7,11 @@
     "wind": "Wind",
     "weather": "Weather",
     "infos": "Informations", 
-    "lastUpdate": "Last update: {date}"
+    "lastUpdate": "Last update: {date}", 
+    "portuguese": "Portuguese", 
+    "english": "English", 
+    "language": "Language:",
+    "save": "Save", 
+    "cancel": "Cancel", 
+    "measureUnit": "Measure Unit:"
 }
