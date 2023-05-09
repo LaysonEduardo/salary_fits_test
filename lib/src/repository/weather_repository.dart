@@ -17,10 +17,7 @@ class WeatherRepository {
     final Response result = await _http.get(
       Endpoints.weatherToday(location: currentLocation, metric: unit),
     );
-    if (result.statusCode == 200) {
-      return OpenWeatherModel.fromJson(result.data);
-    }
-    throw HTTPException();
+    return OpenWeatherModel.fromJson(result.data);
   }
 
   static Future<List<OpenWeatherModel>> fechNextDays({
@@ -31,14 +28,11 @@ class WeatherRepository {
     final Response result = await _http.get(
       Endpoints.nextDays(location: currentLocation, metric: unit),
     );
-    if (result.statusCode == 200) {
-      for (final json in result.data['list']) {
-        if (json['dt_txt'].contains('12:00:00')) {
-          weathers.add(OpenWeatherModel.fromJson(json));
-        }
+    for (final json in result.data['list']) {
+      if (json['dt_txt'].contains('12:00:00')) {
+        weathers.add(OpenWeatherModel.fromJson(json));
       }
-      return weathers;
     }
-    throw HTTPException();
+    return weathers;
   }
 }
