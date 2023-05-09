@@ -4,9 +4,9 @@ import 'package:salary_fits_test/generated/l10n.dart';
 import 'package:salary_fits_test/src/common/app_colors.dart';
 import 'package:salary_fits_test/src/common/app_weather_icons.dart';
 import 'package:salary_fits_test/src/models/weather/open_weather_model.dart';
-import 'package:salary_fits_test/src/modules/commom_components/default_box.dart';
-import '../../../common/app_fonts.dart';
-import '../../../services/weather/weather_management.dart';
+import 'package:salary_fits_test/src/common/components/default_box.dart';
+import '../../../../../common/app_fonts.dart';
+import '../../../../../services/weather/weather_management.dart';
 
 class GeneralInfosContainer extends StatelessWidget {
   final WeatherManagement weather = Modular.get<WeatherManagement>();
@@ -48,8 +48,9 @@ class GeneralInfosContainer extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
-                                constraints: const BoxConstraints(maxWidth: 45),
-                                child: AppWeatherIcons.humidity()),
+                              constraints: const BoxConstraints(maxWidth: 45),
+                              child: AppWeatherIcons.humidity(),
+                            ),
                             const VerticalDivider(
                               thickness: 2,
                             ),
@@ -61,7 +62,7 @@ class GeneralInfosContainer extends StatelessWidget {
                             Text(
                               I18n.of(context).humidity,
                               style: AppFonts.medium(
-                                18,
+                                14,
                                 color: AppColors.accent(
                                   weatherState: weather.state,
                                 ),
@@ -70,7 +71,7 @@ class GeneralInfosContainer extends StatelessWidget {
                             Text(
                               '${today?.main.humidity} %',
                               style: AppFonts.regular(
-                                18,
+                                14,
                                 color: AppColors.accent(
                                   weatherState: weather.state,
                                 ),
@@ -109,7 +110,7 @@ class GeneralInfosContainer extends StatelessWidget {
                             Text(
                               I18n.of(context).wind,
                               style: AppFonts.medium(
-                                18,
+                                14,
                                 color: AppColors.accent(
                                   weatherState: weather.state,
                                 ),
@@ -118,7 +119,7 @@ class GeneralInfosContainer extends StatelessWidget {
                             Text(
                               '${today?.wind.speed} m/s',
                               style: AppFonts.regular(
-                                18,
+                                14,
                                 color: AppColors.accent(
                                   weatherState: weather.state,
                                 ),

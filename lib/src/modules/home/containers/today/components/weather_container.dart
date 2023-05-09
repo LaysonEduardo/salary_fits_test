@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:salary_fits_test/src/common/app_weather_icons.dart';
 import 'package:salary_fits_test/src/services/weather/weather_management.dart';
-import '../../../common/app_colors.dart';
-import '../../../common/app_fonts.dart';
+import '../../../../../common/app_colors.dart';
+import '../../../../../common/app_fonts.dart';
 
 class WeatherContainer extends StatelessWidget {
   final WeatherManagement management = Modular.get<WeatherManagement>();
@@ -31,7 +30,7 @@ class WeatherContainer extends StatelessWidget {
                 ),
               ),
               Text(
-                '${management.todayWeather!.main.feelsLike.round()} °C',
+                '${management.todayWeather!.main.temp.round()} ${management.useCelsius ? '°C' : '°F'}',
                 style: AppFonts.medium(
                   40,
                   color: AppColors.accent(weatherState: management.state),

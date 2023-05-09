@@ -1,8 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 import 'package:salary_fits_test/src/services/weather/weather_management.dart';
 import '../events/home_events.dart';
 import '../state/home_state.dart';
+
+HomeBloc homeBloc = Modular.get<HomeBloc>();
 
 class HomeBloc extends Bloc<HomeEvents, HomeState> {
   final WeatherManagement weather;

@@ -2,12 +2,11 @@ class OpenWeatherModel {
   List<Weather> weather;
   Main main;
   Wind wind;
-  String isoCode;
-  OpenWeatherModel(
-      {required this.weather,
-      required this.main,
-      required this.wind,
-      required this.isoCode});
+  OpenWeatherModel({
+    required this.weather,
+    required this.main,
+    required this.wind,
+  });
 
   factory OpenWeatherModel.fromJson(Map<String, dynamic> json) {
     return OpenWeatherModel(
@@ -16,7 +15,6 @@ class OpenWeatherModel {
           .toList(),
       main: Main.fromJson(json['main']),
       wind: Wind.fromJson(json['wind']),
-      isoCode: json['sys']['country'],
     );
   }
 }
@@ -40,10 +38,10 @@ class Main {
 
   factory Main.fromJson(Map<String, dynamic> json) {
     return Main(
-      temp: json['temp'],
-      feelsLike: json['feels_like'],
-      tempMin: json['temp_min'],
-      tempMax: json['temp_max'],
+      temp: double.parse(json['temp'].toString()),
+      feelsLike: double.parse(json['feels_like'].toString()),
+      tempMin: double.parse(json['temp_min'].toString()),
+      tempMax: double.parse(json['temp_max'].toString()),
       pressure: json['pressure'],
       humidity: json['humidity'],
     );
@@ -86,7 +84,7 @@ class Wind {
 
   factory Wind.fromJson(Map<String, dynamic> json) {
     return Wind(
-      speed: json['speed'],
+      speed: double.parse(json['speed'].toString()),
       deg: json['deg'],
     );
   }
