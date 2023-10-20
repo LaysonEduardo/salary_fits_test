@@ -59,7 +59,7 @@ jobs:
       #     path: version1.txt
       
       - name: Test ISSUE Number
-        run: echo $GITHUB_ISSUE_NUMBER
+        run: echo GITHUB_ISSUE_NUMBER
 
       - name: Update pubspec.yaml
         uses: fjogeleit/yaml-update-action@main
