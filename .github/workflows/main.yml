@@ -107,7 +107,7 @@ jobs:
       #     path: build/app/outputs/flutter-apk/app-release.apk
 
       - name: Rename Artifact
-        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/app-$GITHUB_ISSUE_NUMBER-debug.apk
+        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/app-$GITHUB_ISSUE_NUMBER-debug
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
