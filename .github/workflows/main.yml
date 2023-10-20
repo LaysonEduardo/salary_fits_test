@@ -73,11 +73,11 @@ jobs:
       # - name: Update version in YAML
       #   run: sed -i 's/99.99.99+99/${{ steps.version.outputs.content }}+${{ github.run_number }}/g' pubspec.yaml
 
-      # - name: Upload YAML Artifact
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: pubspec
-      #     path: pubspec.yaml
+      - name: Upload YAML Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: pubspec
+          path: pubspec.yaml
 
       - name: Setup Java
         uses: actions/setup-java@v1
