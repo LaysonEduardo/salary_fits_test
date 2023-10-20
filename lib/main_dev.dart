@@ -5,6 +5,7 @@ import 'app/app_widget.dart';
 import 'src/services/UI/ui_services.dart';
 
 void main() async {
+  print('test');
   await UIServices.init();
   runApp(
     ModularApp(
