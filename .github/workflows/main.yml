@@ -2,10 +2,6 @@ name: Develop CI/CD
 
 on:
   pull_request:
-    branches:
-      - master/**
-    types:
-      - opened
 
 ## uncomment this line to can run the action without need push
   workflow_dispatch:
