@@ -70,14 +70,14 @@ jobs:
         uses: subosito/flutter-action@v2.11.0
         with:
           channel: "stable" # 'dev', 'alpha', default to: 'stable'
-          flutter-version: "3.10.5" # you can also specify exact version of flutter
+          flutter-version: "3.13.7" # you can also specify exact version of flutter
 
-      - name: Cache pub dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.FLUTTER_HOME }}/.pub-cache
-          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: ${{ runner.os }}-pub-
+      # - name: Cache pub dependencies
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ${{ env.FLUTTER_HOME }}/.pub-cache
+      #     key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+      #     restore-keys: ${{ runner.os }}-pub-
 
       - name: Download pub dependencies
         run: flutter pub get
