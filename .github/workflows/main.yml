@@ -6,7 +6,7 @@ on:
       - develop
 
 ## uncomment this line to can run the action without need push
-  #workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   version:
